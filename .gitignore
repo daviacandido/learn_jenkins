@@ -1,0 +1,17 @@
+# Ignorar cache do Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignorar diretório do ambiente virtual
+venv/
+
+# Ignorar cache do pytest
+.pytest_cache/
+
+# Ignorar diretório do Chrome
+chrome-linux64/
+
+# Ignorar Dockerfile
+Dockerfile
+
