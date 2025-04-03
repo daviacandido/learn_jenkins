@@ -1,1 +1,1 @@
-# Dash: Construindo dashboards para modelos de Machine Learning
+# Projeto criado para aprendizado da ferramenta Jenkins e Pytest
