@@ -2,6 +2,7 @@ import os
 import subprocess
 import sys
 
+
 def criar_ambiente_virtual(diretorio_projeto):
     if not os.path.exists(diretorio_projeto):
         print(f"O diretório '{diretorio_projeto}' não existe.")
@@ -18,6 +19,7 @@ def criar_ambiente_virtual(diretorio_projeto):
         print("Ambiente virtual criado com sucesso.")
     except subprocess.CalledProcessError as e:
         print(f"Erro ao criar o ambiente virtual: {e}")
+
 
 def instalar_dependencias(diretorio_projeto, requirements_file):
 
@@ -48,6 +50,7 @@ def main():
     criar_ambiente_virtual(diretorio_projeto)
     
     instalar_dependencias(diretorio_projeto, requirements_file)
+
 
 if __name__ == "__main__":
     main()

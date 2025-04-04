@@ -1,4 +1,4 @@
-from dash import Dash, dcc, html
+from dash import dcc, html
 from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 import paginas
@@ -21,6 +21,7 @@ app.layout = html.Div([
     html.Div(id='conteudo')
 ])
 
+
 @app.callback(
     Output('conteudo', 'children'),
     [Input('url', 'pathname')]    
@@ -32,7 +33,6 @@ def mostrar_pagina(pathname):
         return paginas.graficos.layout
     else:
         return html.P('pagina inicial')
-
 
 
 app.run_server(debug=False, port=8080, host='0.0.0.0')
