@@ -10,6 +10,16 @@ pipeline {
                 )
             }
         }
+        stage('Ambiente de testes'){
+            steps{
+                script {
+                    docker.build('dash-python', '/var/lib/jenkins/workspace/pipeline_dashboard')
+                    sh '''
+                    docker run -d -p 8080:8080 dash-python:latest
+                    '''
+                }
+            }
+        }
         stage('Test') {
             steps {
                 sh '''
@@ -27,6 +37,14 @@ pipeline {
                 sh '''
                 . venv/bin/activate
                 flake8 --ignore=W291,W293,W391 ./*.py|| true
+                '''
+            }
+        }
+        stage('Documentação'){
+            steps{
+                sh '''
+                . venv/bin/activate
+                sphinx-build -b html source/ build/
                 '''
             }
         }
