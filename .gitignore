@@ -12,6 +12,3 @@ venv/
 # Ignorar diretório do Chrome
 chrome-linux64/
 
-# Ignorar Dockerfile
-Dockerfile
-
